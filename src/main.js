@@ -148,9 +148,6 @@ const string = `
 }
 `
 
-let demo = document.querySelector("#demo")
-let demo2 = document.querySelector("#demo2")
-
 const player = {
     id : undefined,
     speed : 100,
