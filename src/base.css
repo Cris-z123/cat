@@ -55,3 +55,49 @@ body {
 button:hover {
     cursor: pointer;
 }
+
+.nose > p {
+    display: none;
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    color: #4e2c11;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+@keyframes wave{
+    0%{
+        transform: rotate(45deg);
+    }
+    33%{
+        transform: rotate(55deg);
+    }
+    66%{
+        transform: rotate(35deg);
+    }
+    100%{
+        transform: rotate(45deg);
+    }
+}
+@keyframes wave2{
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(5deg);
+    }
+    66%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.ear1:hover, .ear2:hover{
+    animation: wave 400ms infinite linear;
+}
+.nose:hover p{
+    transform-origin: center bottom;
+    animation: wave2 300ms infinite linear;
+}

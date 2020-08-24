@@ -24,23 +24,6 @@ const string = `
     left: 110px;
     bottom: 150px;
 }
-@keyframes wave{
-    0%{
-        transform: rotate(45deg);
-    }
-    33%{
-        transform: rotate(55deg);
-    }
-    66%{
-        transform: rotate(35deg);
-    }
-    100%{
-        transform: rotate(45deg);
-    }
-}
-.ear1:hover, .ear2:hover{
-    animation: wave 400ms infinite linear;
-}
 .stripe1, .stripe2, .stripe3 {
     position: absolute;
     left: 70px;
@@ -119,30 +102,7 @@ const string = `
     top: 40px;
 }
 .nose > p {
-    position: absolute;
-    left: 80px;
-    top: 40px;
-    color: #4e2c11;
-    font-size: 22px;
-    font-weight: 800;
-}
-@keyframes wave2{
-    0%{
-        transform: rotate(0deg);
-    }
-    33%{
-        transform: rotate(5deg);
-    }
-    66%{
-        transform: rotate(-5deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
-}
-.nose:hover p{
-    transform-origin: center bottom;
-    animation: wave2 300ms infinite linear;
+    display: block;
 }
 .footer1, .footer2{
     position: absolute;
@@ -187,50 +147,70 @@ const string = `
     border-radius: 15px;
 }
 `
-let n = 1
-let speed = 100
+
 let demo = document.querySelector("#demo")
 let demo2 = document.querySelector("#demo2")
-let run = () => {
-    n += 1
-    if(n > string.length){
-        window.clearInterval(id)
-        return
+
+const player = {
+    id : undefined,
+    speed : 100,
+    n : 1,
+    ui : {
+        demo : document.querySelector("#demo"),
+        demo2 : document.querySelector("#demo2")
+    },
+    init : () => {
+        player.ui.demo.innerText = string.substring(0, player.n)
+        player.ui.demo2.innerHTML = string.substring(0, player.n)
+        player.paly()
+        player.bindEvents()
+    },
+    events : {
+        '#btnPause' : 'pause',
+        '#btnPlay' : 'paly',
+        '#btnSlow' : 'slow',
+        '#btnNormal' : 'normal',
+        '#btnFast' : 'fast'
+    },
+    bindEvents : () => {
+        for(let key in player.events) {
+            if(player.events.hasOwnProperty(key)){
+                const value = player.events[key]
+                document.querySelector(key).onclick = player[value]
+            }
+        }
+    },
+    run : () => {
+        player.n += 1
+        if(player.n > string.length){
+            window.clearInterval(player.id)
+            return
+        }
+        player.ui.demo.innerText = string.substring(0, player.n)
+        player.ui.demo2.innerHTML = string.substring(0, player.n)
+        player.ui.demo.scrollTop = demo.scrollHeight 
+    },
+    paly : () => {
+        player.id = setInterval (player.run, player.speed)
+    },
+    pause : () => {
+        window.clearInterval(player.id)
+    },
+    slow : () => {
+        player.pause()
+        player.speed = 200
+        player.paly()
+    },
+    normal : () => {
+        player.pause()
+        player.speed = 100
+        player.paly()
+    },
+    fast : () => {
+        player.pause()
+        player.speed = 0
+        player.paly()
     }
-    demo.innerText = string.substring(0, n)
-    demo2.innerHTML = string.substring(0, n)
-    demo.scrollTop = demo.scrollHeight 
-}
-const paly = () => {
-    return setInterval (run,speed)
-}
-const pause = () => {
-    window.clearInterval(id)
 }
 
-demo.innerText = string.substring(0, n)
-demo2.innerHTML = string.substring(0, n)
-
-let id = paly()
-
-document.querySelector('#btnPause').onclick = () => {
-    pause()
-}
-document.querySelector('#btnPlay').onclick = () => {
-    id = paly()
-}
-document.querySelector('#btnSlow').onclick = () => {
-    pause()
-    speed = 200
-    id = paly()
-}
-document.querySelector('#btnNormal').onclick = () => {
-    pause()
-    speed = 100
-    id = paly()
-}
-document.querySelector('#btnFast').onclick = () => {
-    pause()
-    speed = 0
-    id = paly()
-}
+player.init()

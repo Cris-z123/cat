@@ -118,62 +118,73 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var string = "\n.cat-body {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%,-50%);\n    width: 300px;\n    height: 188px;\n    background: #bfbab3;\n    border-radius: 30px 90px 90px 90px;\n}\n.ear1, .ear2 {\n    position: absolute;\n    left: 20px;\n    bottom: 150px;\n    height: 50px;\n    width: 50px;\n    border-radius: 12px;\n    background: #bfbab3;\n    transform: rotate(45deg);\n}\n.ear2{\n    position: absolute;\n    left: 110px;\n    bottom: 150px;\n}\n@keyframes wave{\n    0%{\n        transform: rotate(45deg);\n    }\n    33%{\n        transform: rotate(55deg);\n    }\n    66%{\n        transform: rotate(35deg);\n    }\n    100%{\n        transform: rotate(45deg);\n    }\n}\n.ear1:hover, .ear2:hover{\n    animation: wave 400ms infinite linear;\n}\n.stripe1, .stripe2, .stripe3 {\n    position: absolute;\n    left: 70px;\n    top: 0;\n    width: 10px;\n    height: 25px;\n    background: #808080;\n    border-radius: 10px;\n}\n.stripe2 {\n    position: absolute;\n    left: 85px;\n    top: 0;\n}\n.stripe3 {\n    position: absolute;\n    left: 100px;\n    top: 0;\n}\n.stripe4, .stripe5 {\n    position: absolute;\n    left: 160px;\n    top: 0;\n    width: 20px;\n    height: 25px;\n    background: #808080;\n    border-radius: 0 0 10px 10px;\n}\n.stripe5 {\n    position: absolute;\n    left: 190px;\n    top: 0;\n}\n.beard-left1, .beard-right1, .beard-left2, .beard-right2 {\n    width: 30px;\n    height: 10px;\n    background: #4e2c11;\n    border-radius: 10px;\n}\n.beard-left1 {\n    position: absolute;\n    top: 45px;\n    left: -10px;\n    transform: rotate(10deg);\n}\n.beard-right1 {\n    position: absolute;\n    top: 65px;\n    left: -10px;\n    transform: rotate(-10deg);\n}\n.beard-left2 {\n    position: absolute;\n    top: 45px;\n    left: 160px;\n    transform: rotate(-10deg);\n}\n.beard-right2 {\n    position: absolute;\n    top: 65px;\n    left: 160px;\n    transform: rotate(10deg);\n}\n.eye1, .eye2 {\n    position: absolute;\n    left: 40px;\n    top: 40px;\n    width: 20px;\n    height: 20px;\n    border-radius: 100%;\n    background: #4e2c11;\n}\n.eye2 {\n    position: absolute;\n    left: 125px;\n    top: 40px;\n}\n.nose > p {\n    position: absolute;\n    left: 80px;\n    top: 40px;\n    color: #4e2c11;\n    font-size: 22px;\n    font-weight: 800;\n}\n@keyframes wave2{\n    0%{\n        transform: rotate(0deg);\n    }\n    33%{\n        transform: rotate(5deg);\n    }\n    66%{\n        transform: rotate(-5deg);\n    }\n    100%{\n        transform: rotate(0deg);\n    }\n}\n.nose:hover p{\n    transform-origin: center bottom;\n    animation: wave2 300ms infinite linear;\n}\n.footer1, .footer2{\n    position: absolute;\n    bottom: -20px;\n    left: 50px;\n    height: 35px;\n    width: 30px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n.footer2{\n    position: absolute;\n    bottom: -20px;\n    left: 200px;\n}\n.tail-row {\n    position: absolute;\n    bottom: 120px;\n    left: 260px;\n    height: 25px;\n    width: 80px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n.tail-row::before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 40px;\n    height: 25px;\n    width: 15px;\n    background: #808080;\n}\n.tail-col {\n    position: absolute;\n    bottom: 120px;\n    left: 320px;\n    height: 50px;\n    width: 25px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n";
-var n = 1;
-var speed = 100;
+var string = "\n.cat-body {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%,-50%);\n    width: 300px;\n    height: 188px;\n    background: #bfbab3;\n    border-radius: 30px 90px 90px 90px;\n}\n.ear1, .ear2 {\n    position: absolute;\n    left: 20px;\n    bottom: 150px;\n    height: 50px;\n    width: 50px;\n    border-radius: 12px;\n    background: #bfbab3;\n    transform: rotate(45deg);\n}\n.ear2{\n    position: absolute;\n    left: 110px;\n    bottom: 150px;\n}\n.stripe1, .stripe2, .stripe3 {\n    position: absolute;\n    left: 70px;\n    top: 0;\n    width: 10px;\n    height: 25px;\n    background: #808080;\n    border-radius: 10px;\n}\n.stripe2 {\n    position: absolute;\n    left: 85px;\n    top: 0;\n}\n.stripe3 {\n    position: absolute;\n    left: 100px;\n    top: 0;\n}\n.stripe4, .stripe5 {\n    position: absolute;\n    left: 160px;\n    top: 0;\n    width: 20px;\n    height: 25px;\n    background: #808080;\n    border-radius: 0 0 10px 10px;\n}\n.stripe5 {\n    position: absolute;\n    left: 190px;\n    top: 0;\n}\n.beard-left1, .beard-right1, .beard-left2, .beard-right2 {\n    width: 30px;\n    height: 10px;\n    background: #4e2c11;\n    border-radius: 10px;\n}\n.beard-left1 {\n    position: absolute;\n    top: 45px;\n    left: -10px;\n    transform: rotate(10deg);\n}\n.beard-right1 {\n    position: absolute;\n    top: 65px;\n    left: -10px;\n    transform: rotate(-10deg);\n}\n.beard-left2 {\n    position: absolute;\n    top: 45px;\n    left: 160px;\n    transform: rotate(-10deg);\n}\n.beard-right2 {\n    position: absolute;\n    top: 65px;\n    left: 160px;\n    transform: rotate(10deg);\n}\n.eye1, .eye2 {\n    position: absolute;\n    left: 40px;\n    top: 40px;\n    width: 20px;\n    height: 20px;\n    border-radius: 100%;\n    background: #4e2c11;\n}\n.eye2 {\n    position: absolute;\n    left: 125px;\n    top: 40px;\n}\n.nose > p {\n    display: block;\n}\n.footer1, .footer2{\n    position: absolute;\n    bottom: -20px;\n    left: 50px;\n    height: 35px;\n    width: 30px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n.footer2{\n    position: absolute;\n    bottom: -20px;\n    left: 200px;\n}\n.tail-row {\n    position: absolute;\n    bottom: 120px;\n    left: 260px;\n    height: 25px;\n    width: 80px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n.tail-row::before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 40px;\n    height: 25px;\n    width: 15px;\n    background: #808080;\n}\n.tail-col {\n    position: absolute;\n    bottom: 120px;\n    left: 320px;\n    height: 50px;\n    width: 25px;\n    background: #bfbab3;\n    border-radius: 15px;\n}\n";
 var demo = document.querySelector("#demo");
 var demo2 = document.querySelector("#demo2");
+var player = {
+  id: undefined,
+  speed: 100,
+  n: 1,
+  ui: {
+    demo: document.querySelector("#demo"),
+    demo2: document.querySelector("#demo2")
+  },
+  init: function init() {
+    player.ui.demo.innerText = string.substring(0, player.n);
+    player.ui.demo2.innerHTML = string.substring(0, player.n);
+    player.paly();
+    player.bindEvents();
+  },
+  events: {
+    '#btnPause': 'pause',
+    '#btnPlay': 'paly',
+    '#btnSlow': 'slow',
+    '#btnNormal': 'normal',
+    '#btnFast': 'fast'
+  },
+  bindEvents: function bindEvents() {
+    for (var key in player.events) {
+      if (player.events.hasOwnProperty(key)) {
+        var value = player.events[key];
+        document.querySelector(key).onclick = player[value];
+      }
+    }
+  },
+  run: function run() {
+    player.n += 1;
 
-var run = function run() {
-  n += 1;
+    if (player.n > string.length) {
+      window.clearInterval(player.id);
+      return;
+    }
 
-  if (n > string.length) {
-    window.clearInterval(id);
-    return;
+    player.ui.demo.innerText = string.substring(0, player.n);
+    player.ui.demo2.innerHTML = string.substring(0, player.n);
+    player.ui.demo.scrollTop = demo.scrollHeight;
+  },
+  paly: function paly() {
+    player.id = setInterval(player.run, player.speed);
+  },
+  pause: function pause() {
+    window.clearInterval(player.id);
+  },
+  slow: function slow() {
+    player.pause();
+    player.speed = 200;
+    player.paly();
+  },
+  normal: function normal() {
+    player.pause();
+    player.speed = 100;
+    player.paly();
+  },
+  fast: function fast() {
+    player.pause();
+    player.speed = 0;
+    player.paly();
   }
-
-  demo.innerText = string.substring(0, n);
-  demo2.innerHTML = string.substring(0, n);
-  demo.scrollTop = demo.scrollHeight;
 };
-
-var paly = function paly() {
-  return setInterval(run, speed);
-};
-
-var pause = function pause() {
-  window.clearInterval(id);
-};
-
-demo.innerText = string.substring(0, n);
-demo2.innerHTML = string.substring(0, n);
-var id = paly();
-
-document.querySelector('#btnPause').onclick = function () {
-  pause();
-};
-
-document.querySelector('#btnPlay').onclick = function () {
-  id = paly();
-};
-
-document.querySelector('#btnSlow').onclick = function () {
-  pause();
-  speed = 200;
-  id = paly();
-};
-
-document.querySelector('#btnNormal').onclick = function () {
-  pause();
-  speed = 100;
-  id = paly();
-};
-
-document.querySelector('#btnFast').onclick = function () {
-  pause();
-  speed = 0;
-  id = paly();
-};
+player.init();
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
