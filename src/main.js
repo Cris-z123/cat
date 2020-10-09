@@ -1,4 +1,6 @@
 const string = `
+/* 让我们今天来画一只可爱的小猫咪
+第一步:先画小猫的圆滚滚的身子 */
 .cat-body {
     position: absolute;
     top: 50%;
@@ -9,6 +11,7 @@ const string = `
     background: #bfbab3;
     border-radius: 30px 90px 90px 90px;
 }
+/* 第二步:画它的两只小耳朵 */
 .ear1, .ear2 {
     position: absolute;
     left: 20px;
@@ -24,6 +27,7 @@ const string = `
     left: 110px;
     bottom: 150px;
 }
+/* 给它一些花纹 */
 .stripe1, .stripe2, .stripe3 {
     position: absolute;
     left: 70px;
@@ -57,6 +61,7 @@ const string = `
     left: 190px;
     top: 0;
 }
+/* 第三步:给它添上胡须 */
 .beard-left1, .beard-right1, .beard-left2, .beard-right2 {
     width: 30px;
     height: 10px;
@@ -87,6 +92,7 @@ const string = `
     left: 160px;
     transform: rotate(10deg);
 }
+/* 第四步:画它的眼睛和鼻子 */
 .eye1, .eye2 {
     position: absolute;
     left: 40px;
@@ -104,6 +110,7 @@ const string = `
 .nose > p {
     display: block;
 }
+/* 终于最后一步了,就要大功告成了,给它画上脚和小尾巴吧 */
 .footer1, .footer2{
     position: absolute;
     bottom: -20px;
@@ -146,6 +153,7 @@ const string = `
     background: #bfbab3;
     border-radius: 15px;
 }
+/* 一只可爱的小猫咪就画好了。去摸摸它吧，它会向你摇耳朵噢 */
 `
 
 const player = {

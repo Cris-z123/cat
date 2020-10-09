@@ -8,9 +8,6 @@ body {
     background: #F0FFFF;
     font-family: 'Sniglet';
 }
-/* .mycat {
-    position: relative;
-} */
 .cat-body {
     position: absolute;
     top: 50%;
