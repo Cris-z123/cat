@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rookie996-object/cat/issues"
   },
-  "homepage": "https://github.com/rookie996-object/cat#readme"
+  "homepage": "https://github.com/rookie996-object/cat#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
 }
