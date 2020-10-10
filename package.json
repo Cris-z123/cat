@@ -1,0 +1,20 @@
+{
+  "name": "cat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rookie996-object/cat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rookie996-object/cat/issues"
+  },
+  "homepage": "https://github.com/rookie996-object/cat#readme"
+}
